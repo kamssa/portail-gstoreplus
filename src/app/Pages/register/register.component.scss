@@ -1,0 +1,74 @@
+.cadre{
+    min-height: 100vh !important;
+    box-shadow: 0 10px 6px 1px rgba(172, 168, 168, 0.43);;
+}
+.cadre-image{
+    min-height: 100vh !important;
+    background-image: url('/assets/Images/font.jpg');
+    background-size: cover;
+    background-position: center top;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    position: relative;
+}
+.titre{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding-top: 280px;
+    margin-left: 60px;
+}
+.image1{
+    min-height: 100vh !important;
+}
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .5 !important;
+    background: linear-gradient(87deg, #c1c1d0 0, #252427cc 100%) !important;
+}
+.card-login{
+    padding-top: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.card-login label {
+    font-size: 0.875rem;
+}
+.inputLogin {
+    //box-shadow: 0 3.2px rgba(208, 208, 208, 0.25);
+    box-shadow: 0 3.2px rgb(208 208 208 / 25%);
+    //border: 1px solid rgba(208, 208, 208, 0.25);
+    padding: 15px 25px;
+    border: 0 solid;
+    font-size: 13px;
+    min-height: 45px;
+    margin-bottom: 20px;
+    background-color: #dde4ec38;
+}
+.form-control:focus{
+    box-shadow: 0 0 0 0.2rem rgb(125 114 255);
+}
+.btnValider {
+    width: 100%;
+    background-color:#7d72ff !important;
+    border-color:#7d72ff !important;
+}
+.btnValider:active {
+    box-shadow: none !important;
+}
+.btnValider:focus {
+    box-shadow: none !important;
+}
+.btnValider:hover {
+    background: transparent !important;
+    color:#7d72ff !important;
+}
+.loginText{
+    color: #7d72ff !important;
+    font-size: 0.875rem;
+}

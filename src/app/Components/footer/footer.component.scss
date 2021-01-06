@@ -1,0 +1,49 @@
+.grande{
+    background-color: #052057;
+}
+.grande .col-md-4 img {
+    height: 6rem;
+}
+.grande h6{
+    font-weight: 600;
+    color: white;
+}
+.list li {
+    color: white;
+    font-size: 0.875rem;
+    line-height: 36px;
+    font-weight: 600;
+}
+span img {
+    height: 20px;
+    margin-left: 8px;
+}
+.paiement p {
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding-top: 10px;
+}
+.copyright{
+    background-color: black;
+}
+.copyright p {
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+.copyright .text {
+    font-weight: 600;
+    font-size: 0.715rem;
+    color: #131313;
+    text-align: end;
+}
+@media screen and (max-width: 800px){
+    .mobileFooter{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .row{
+        margin-right: 0px;
+    }
+}
