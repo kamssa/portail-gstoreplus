@@ -1,5 +1,5 @@
 .grande{
-    background-image: url(/assets/Images/cover.jpg);
+    background-image: url(/assets/Images/stylish-black-girl.jpg);
     background-size: cover;
     background-position: center top;
     min-height: 100vh;
@@ -12,13 +12,15 @@
 .text-description {
     padding-top: 50px;
     font-weight: 600;
-    color: #f4f4f4;
+    color: #cc2127;
     text-transform: uppercase;
     font-size: 0.999rem;
-    letter-spacing: 1px;
-    margin-left: 25px;
+    //letter-spacing: 1px;
+    margin-left: 300px;
     font-style: italic;
+
 }
+
 .lien-row{
     padding-top: 10rem;
     text-align: center;
@@ -28,7 +30,7 @@
     border: 1px solid #eee;
     background-color: #fafafa;
     height: 40px;
-    width: 180px;
+    width: 250px;
     transition: all .2s ease-in-out;
 
 }
