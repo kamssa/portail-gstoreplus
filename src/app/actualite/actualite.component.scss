@@ -1,0 +1,51 @@
+.cadreAnnonce{
+  margin-top: 30px;
+}
+.cardAnnonce{
+  box-shadow: 0 15px 25px -7px rgba(0,0,0,.09), 0 -12px 10px -10px rgba(0,0,0,.04);
+  background: #fff;
+  margin-bottom: 6px;
+
+  border: solid #dfdfdd;
+  border-width: 0 .1rem .1rem 0;
+}
+.cardAnnonce2{
+  border: solid #dfdfdd;
+  border-width: 0 .1rem .1rem 0;
+}
+.btnVoir{
+  border-color: #e84121 !important;
+  color: #e84121 !important;
+}
+.btnVoir:hover{
+  background-color: #e84121 !important;
+  color: white !important;
+}
+.card-text{
+  line-height: 1.467;
+  color: #333;
+  top: -.6rem;
+  position: relative;
+}
+.text-bas{
+  color: #333;
+  font-weight: 600;
+  font-size: 10px;
+}
+.text-bas:hover{
+  text-decoration: none !important;
+}
+.titreActualite{
+  color: #333 !important;
+}
+.titreActualite:hover{
+  color: #e84121 !important;
+}
+a:hover{
+  text-decoration: none !important;
+}
+@media screen and (max-width:800px){
+  .cardAnnonce2{
+    margin-bottom: 10px;
+  }
+}

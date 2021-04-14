@@ -1,0 +1,37 @@
+<div class="cadre">
+  <div class="container">
+    <div class="card login-card ">
+      <div class="row">
+        <div class="col-md-7">
+          <img [src]="terrain?.path" class="img-fluid image1" alt="">
+        </div>
+        <div class="col-md-5" style="padding-left: 0px;padding-right: 0px;">
+          <div class="card-body">
+            <div class="brand-wrapper">
+              <img src="./assets/img/logo.png" class="img-fluid image2" alt="">
+            </div>
+            <h1 class="text-description">{{terrain?.ville.libelle}}</h1>
+            <p>{{terrain?.description}}</p>
+            <!--<p>{{terrain?.prix | number}}</p>-->
+            <div class="text-center pt-3">
+                <button mat-raised-button  color="primary" (click)="onDemande(terrain.id)">Effectuer une demande</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- app.component.html -->
+  <div class="container">
+    <agm-map
+      [latitude]="latitude"
+      [longitude]="longitude"
+      [zoom]="zoom" >
+      <agm-marker
+        [latitude]="latitude"
+        [longitude]="longitude"></agm-marker>
+    </agm-map>
+
+  </div>
+
+</div>

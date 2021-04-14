@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="main-content">
+    <div class="container-fluid">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header card-header-rose">
+              <h4 class="card-title">Inscrivez-vous pour la demande</h4>
+            </div>
+            <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center" >
+              <mat-card class="box">
+
+                <form class="example-form" [formGroup]="demandeForm" (ngSubmit)="onSubmit(demandeForm.value)">
+                  <mat-card-content>
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>Selectinner une civilité</mat-label>
+                      <mat-select placeholder="titre" formControlName="titre" (selectionChange)="greetTitre($event)">
+                        <mat-option *ngFor="let t of titres" [value]=t.name>
+                          {{t.libelle}}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Nom" formControlName="nom">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Prenom" formControlName="prenom">
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Email" formControlName="email">
+                    </mat-form-field>
+
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Password" formControlName="password">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width" formGroupName="adresse">
+                      <input matInput placeholder="Telephone" formControlName="telephone">
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Fonction" formControlName="fonction">
+                    </mat-form-field>
+                  </mat-card-content>
+
+                  <button mat-stroked-button color="accent" class="btn-block">Valider</button>
+
+                </form>
+              </mat-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

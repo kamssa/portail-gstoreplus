@@ -1,0 +1,40 @@
+<div class="cadre">
+  <div class="container">
+    <div class="row myrow justify-content-center">
+
+      <h1 class="justify-content-center">
+        <span>Mon Tableau de bord</span>
+      </h1></div>
+    <div class="card login-card ">
+      <div *ngIf="editMode; else newDash">
+      <div class="row">
+        <div class="col-md-7">
+          <img [src]="terrains.path" class="img-fluid image1" alt="">
+        </div>
+        <div class="col-md-5" style="padding-left: 0px;padding-right: 0px;">
+          <div class="card-body">
+            <h1 class="text-description">Geolocalisation</h1>
+            <p>{{personne.nomComplet}}</p>
+            <p>info</p>
+          </div>
+          </div>
+        </div>
+      </div>
+      <ng-template #newDash>
+        <h1 style="color: #0d47a1">Vous devez vous abonné à la géolocalisation</h1>
+      </ng-template>
+    </div>
+  </div>
+  <div class="container" *ngIf="editMode">
+    <agm-map
+      [latitude]="latitude"
+      [longitude]="longitude"
+      [zoom]="zoom" >
+      <agm-marker
+        [latitude]="latitude"
+        [longitude]="longitude"></agm-marker>
+    </agm-map>
+
+  </div>
+
+</div>

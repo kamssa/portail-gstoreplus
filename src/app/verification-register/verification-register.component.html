@@ -1,0 +1,15 @@
+<div class="container">
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Bienvenue sur la platform de Gstoreplus</mat-card-title>
+    <mat-card-subtitle>Entrer les 6 chifffres que vous avez reçu dans votre mail puis validez</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content align="center">
+    <input (keyup)="onKey($event)">
+  </mat-card-content>
+  <mat-card-actions align="center">
+
+    <button mat-button type="submit" (click)="onClick()">Valider</button>
+  </mat-card-actions>
+</mat-card>
+</div>

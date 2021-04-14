@@ -1,0 +1,24 @@
+<div class="container">
+
+
+  <div class="row justify-content-center">
+    <div *ngFor="let item of terrains" class="col myrow">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-subtitle fxLayoutAlign="space-around center">{{item.libelle}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="item.path" alt="Image de terrain">
+        <mat-card-content>
+          <p fxLayout="row" fxLayoutAlign="space-around center">{{item.prix|number}}</p>
+          <p>
+            {{item.description | slice:0:100}}
+          </p>
+        </mat-card-content>
+        <div fxLayout="row" fxLayoutAlign="space-around center">
+          <button  mat-button color="primary" (click)="onDetail(item.id)">En savoir plus</button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

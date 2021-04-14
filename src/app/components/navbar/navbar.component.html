@@ -1,0 +1,65 @@
+<div class="container-fluid first-header">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row text-center">
+        <div class="col-md-6 pt-4">
+          <i class="fa fa-envelope mr-2"></i>
+          <span>info@gstoreplus.ci</span>
+        </div>
+        <div class="col-md-6 pt-4">
+          <i class="fa fa-phone mr-2"></i>
+          <span>+255 09 88 15 67 / 23 59 04 29</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row pt-2">
+    <div class="col-md-12" id="header">
+      <nav class="navbar  navbar-expand-lg navbar-light " >
+        <a class="navbar-brand " href="#">
+          <div class="logo">
+            <img src="./assets/Images/Image1.jpeg" class="img-fluid" alt="">
+          </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav text-uppercase" id="premier" style="font-size: 13px;">
+            <li *ngFor="let cpt of menuItems;let i=index" class="nav-item">
+              <a [routerLink]="[cpt.path]" id="change_{{i}}" (click)="active(i)" class="nav-link b lien">
+                {{cpt.title}}
+              </a>
+            </li>
+
+              <li class="nav-item-t">
+                <a class="nav-link lien" routerLink="/login" *ngIf="!personne">Se connecter</a>
+              </li>
+            <li class="nav-item-t dropdown" *ngIf="personne">
+              <div class="example-button-container" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button mat-mini-fab color="primary">
+                  <span>{{premierC}} </span>
+                </button>
+              </div>
+              <div id="personne" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                <div class="card" style="width: 20rem;">
+                  <div class="card-body">
+                    <p class="minuscule">{{personne.nomComplet}}</p>
+                    <p class="minuscul">{{personne.email}}</p>
+                    <p class="card-text">
+                      <button  class="btn btn-primary btnValider"  (click)="openDash(personne.id)" >Mon tableau de bord</button>
+                    </p>
+                    <p><button  class="btn btn-primary btnValider" (click)="logout()">Déconnexion</button></p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>

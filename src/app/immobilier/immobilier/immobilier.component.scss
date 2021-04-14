@@ -1,0 +1,201 @@
+.container{
+  margin-top: 60px;
+}
+.myrow{
+  margin-top: 60px;
+  margin-bottom: 60px;
+  font-size: 16px;
+}
+h1{
+  margin-top: 30px;
+}
+h1 span{
+  color: #d91b2e;
+  padding:0 20px;
+  font-size: large;
+  font-family: Impact, "Arial Black", Arial, Verdana, sans-serif;
+
+}
+h1:before, h1:after {
+  content:'';
+  display:inline-block;
+  vertical-align: middle;
+  width: 20rem;
+  height: 1px;
+  background: #000 }
+h1:before {
+  margin-right: .3rem
+}
+h1:after {
+  margin-left: .3rem
+
+}
+li{
+  list-style-type: none;
+  justify-content: center;
+  margin-top: 50px;
+
+}
+span{
+
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+img{
+  height: 400px;
+  width: 400px;
+}
+.container{
+  margin-top: 30px;
+}
+
+.cardAnnonce{
+  box-shadow: 0 15px 25px -7px rgba(0,0,0,.09), 0 -12px 10px -10px rgba(0,0,0,.04);
+  background: #fff;
+  border: solid #dfdfdd;
+  border-width: 0 .1rem .1rem 0;
+  justify-content:center;
+}
+
+
+.myrow{
+  margin: 0px;
+  padding: 0px;
+
+}
+#carouselSite{
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.25rem;
+}
+.carousel .carousel-item {
+  width: 100%;
+}
+#elementID:hover{
+  color: #323232;
+  text-shadow: 1px 1px 1px #ccc;
+  font-size: 3.5em;
+}
+#element:hover{
+  color: #323232;
+  text-shadow: 1px 1px 1px #ccc;
+  font-size: 3.5em;
+}
+
+h1{
+  margin-top: 30px;
+}
+h1 button{
+  color: #d91b2e;
+  background-color: #fff3e0;
+  padding:0 20px;
+  font-size: large;
+}
+h1:before, h1:after {
+  content:'';
+  display:inline-block;
+  vertical-align: middle;
+  width: 20rem;
+  height: 1px;
+  background: #000 }
+h1:before {
+  margin-right: .3rem
+}
+h1:after {
+  margin-left: .3rem
+}
+.produits{
+  margin-top: 20px;
+  padding: 0;
+}
+
+.example-card {
+  max-width: 200px;
+
+}
+.mat-card-image{
+  width: 200px;
+}
+.cadreSearch {
+  min-height: 305px;
+  background-image: url("/assets/img/cover.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.25rem;
+  margin-bottom: 20px;
+}
+.form{
+  width: 200px;
+}
+//partie Temoignages
+.cadreTemoignages {
+  min-height: auto;
+
+}
+.cadrePourquoi {
+  min-height: 500px;
+  background-color: #ffffff !important;
+}
+.titreW {
+  position: relative;
+  font-size: 26px;
+  font-weight: 900;
+  //text-transform: uppercase;
+  //line-height: 0.5em;
+  letter-spacing: 3.9px;
+  color: #000000;
+}
+mat-label{
+  width: 100%;
+}
+.textW {
+  font-weight: 700;
+  color: #444444;
+  font-size: 3rem;
+}
+.cadreTemoignages {
+  min-height: 620px;
+
+}
+// titre partenaire
+.titrePartenaires {
+  position: relative;
+  font-size: 26px;
+  font-weight: 900;
+  //text-transform: uppercase;
+  line-height: 0.5em;
+  letter-spacing: 3.9px;
+  color: #000000;
+}
+.titreT{
+  position: relative;
+  color: #314584 !important;
+  font-size: 16px;
+  font-weight: 500;
+  //text-transform: uppercase;
+  line-height: 0.5em;
+  letter-spacing: 2.9px;
+}
+@media screen and (max-width: 760px){
+  .mobileCadre {
+    text-align: center;
+  }
+  .mobileVision {
+    margin-right: 0;
+  }
+  .cadrePartenaires{
+    min-height: 0px;
+  }
+  .TitreHeader{
+    font-size: 1.78rem;
+    line-height: normal;
+  }
+  .cadreAccueil{
+    min-height: auto;
+    background-attachment: scroll;
+  }
+}
+.recherche{
+  margin-top: 50px;
+}

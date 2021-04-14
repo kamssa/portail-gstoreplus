@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row  justify-content-center">
+    <div class="col-md-7" style="padding-left: 0px;padding-right: 0px;">
+      <div class="card-body">
+        <div class="carde-login">
+          <div class="text-right forgot">
+            <p><span style="color: #777777;font-size: 0.875rem;">Vous avez déjà un compte ? </span><a class="loginText" routerLink="/login">Login</a></p>
+          </div>
+          <p class="font-weight-bold">Créer un compte</p>
+          <form class="pt-3" [formGroup]="registryForm" (ngSubmit)="onSubmit()">
+
+              <mat-form-field class="example-full-width">
+                <input matInput type="text" placeholder="Nom " formControlName="nom" id="nom">
+                <mat-error *ngIf="hasError('nom', 'required')">Champ obligatoire</mat-error>
+              </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+              <input matInput type="text" placeholder="Prénom " formControlName="prenom" id="prenom">
+              <mat-error *ngIf="hasError('prenom', 'required')">Champ obligatoire</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" formGroupName="adresse">
+                <input matInput type="text" placeholder="Téléphone" formControlName="telephone" id="telephone">
+              <mat-hint align="end">Vous devez remplir ce champs!</mat-hint>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput type="text" placeholder="Email " formControlName="email" id="email">
+              <mat-error *ngIf="hasError('email', 'required')">Champ obligatoire</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput type="text" placeholder="Mot de passe " formControlName="password" id="password">
+              <mat-error *ngIf="hasError('password', 'required')">Champ obligatoire</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput type="text" placeholder="Confirmer mot de passe " formControlName="password">
+              <mat-error *ngIf="hasError('password', 'required')">Champ obligatoire</mat-error>
+            </mat-form-field>
+            <div class="text-center pt-3">
+              <button type="submit" class="btn btn-primary btnValider" [disabled]="!registryForm.valid">Connexion</button>
+            </div>
+            <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,83 @@
+.cadre{
+  min-height: 100vh !important;
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+.login-card{
+  border: 0;
+  border-radius: 27.5px;
+  box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+  overflow: hidden;
+}
+.image1{
+  padding-right: 0;
+  padding-left: 0;
+}
+.image2{
+  height: 3rem;
+}
+
+.brand-wrapper{
+  margin-bottom: 19px;
+}
+.text-description{
+  color: #000;
+  font-weight: normal;
+  margin-bottom: 23px;
+}
+.card-body{
+  padding: 85px 60px 60px !important;
+}
+.login-card form {
+  max-width: 326px;
+}
+.inputLogin {
+  box-shadow: 0 3.2px rgba(208, 208, 208, 0.25);
+  border: 1px solid rgba(208, 208, 208, 0.25);
+  padding: 15px 25px;
+  font-size: 13px;
+  min-height: 45px;
+  margin-bottom: 20px;
+}
+.inputLogin:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: transparent;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem #e97761;
+}
+.btnValider {
+  width: 400px;
+  background-color: #e97761 !important;
+  border-color: #e97761 !important;
+}
+.btnValider:active {
+  box-shadow: none !important;
+}
+.btnValider:focus {
+  box-shadow: none !important;
+}
+.btnValider:hover {
+  background: transparent !important;
+  color: #e97761 !important;
+
+}
+
+.footer-text{
+  font-size: 14px;
+  color:#e97761;
+  line-height: 2;
+  letter-spacing: 2px;
+}
+.footer-text-accueil{
+  font-size: 14px;
+  color: #e97761;
+  letter-spacing: 2px;
+}
+@media screen and (max-width:950px){
+  .image1{
+    min-height: 100%;
+    object-fit: cover;
+  }
+}
