@@ -1,10 +1,70 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { AccueilComponent } from './accueil/accueil.component';
+import { AproposComponent } from './apropos/apropos.component';
+import { BlogComponent } from './blog/blog.component';
+import { ConnexionComponent } from './connexion/connexion.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { DetailBlogComponent } from './detail-blog/detail-blog.component';
+import { DevisComponent } from './devis/devis.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+import { InvestissementComponent } from './investissement/investissement.component';
+import { PageDetailComponent } from './page-detail/page-detail.component';
+import { AllTerrainComponent } from './all-terrain/all-terrain.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { AllImmobilierComponent } from './all-immobilier/all-immobilier.component';
+import {DetailTerrainComponent} from "./terrain/detail-terrain/detail-terrain.component";
+import {DemandeComponent} from "./demande/demande/demande.component";
+import {DashboardComponent} from "./dashboard/dashboard.component";
+import {AuthGuardService} from "./helper/auth-guard.service";
 
-const routes: Routes = [];
+
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'portail',
+    pathMatch: 'full',
+  },
+  {
+    path: 'portail',
+    component: MainPageComponent,
+    children:[
+      {
+        path:'portail',
+        loadChildren: () => import('./main-page/main.module').then(m => m.MainModule)
+      },
+
+    ]
+  },
+  { path: 'accueil', component: AccueilComponent },
+  { path: 'devis', component: DevisComponent },
+  { path: 'page-detail', component: PageDetailComponent },
+  { path: 'a-propos', component: AproposComponent },
+  { path: 'contacts', component: ContactsComponent },
+  { path: 'blog', component: BlogComponent },
+  { path: 'foncier', component: AllTerrainComponent },
+  { path: 'immobilier', component: AllImmobilierComponent },
+  { path: 'detail-blog', component: DetailBlogComponent },
+  { path: 'investissement', component: InvestissementComponent },
+  { path: 'inscription', component: InscriptionComponent },
+  { path: 'connexion', component: ConnexionComponent },
+  {path: 'detailTerrain/:id' , component: DetailTerrainComponent},
+  {path: 'detailMaison/:id' , component: DetailTerrainComponent},
+  {path: 'detailFlashMaison/:id' , component: DetailTerrainComponent},
+  { path: 'demande/:id', component: DemandeComponent},
+  { path: 'dashboard/:id',
+    component: DashboardComponent,
+    canActivate: [
+      AuthGuardService
+    ]}
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes,{
+      useHash: true
+    })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

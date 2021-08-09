@@ -1,0 +1,90 @@
+.container{
+  margin-top: 10px;
+}
+#carouselExampleSlidesOnly{
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  /*min-height: 100%;*/
+}
+h1{
+  margin-top: 0;
+}
+.demande{
+  padding: 4px 10px;
+  display: inline-block;
+  border-radius: 50px;
+  background-color: #8d97ad;
+  color: white;
+  border: 5px solid white;
+  transition: border 0.2s ease;
+}
+.demande:hover {
+  border: 5px solid #8d97ad;
+  cursor: pointer;
+}
+.example-card{
+  width: 200px;
+}
+
+.card-title{
+    text-align: center;
+}
+.titre{
+  font-family: Times New Roman, Times, serif;
+  font-size: 25px;
+}
+.card-text{
+    text-align: justify;
+}
+
+
+
+h2{
+  text-align:center;
+  padding: 20px;
+}
+/* Slider */
+
+.navbar-default .navbar-nav > li > a{
+  color:#000;
+
+}
+
+.nav-item .nav-link{
+  color: blue;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.nav-item .nav-link.active{
+  color: red;
+}
+
+.nav-item .nav-link:hover{
+  color: red;
+}
+
+
+
+/*.navbar.solid {
+  background-color: #490D40;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px grey;
+  color: white;
+}*/
+.card{
+  z-index: 0;
+}
+minuscule{
+  text-transform: capitalize;
+}
+.minuscul{
+  text-transform: lowercase;
+}
+#navbarDropdownMenuLink{
+  z-index: 10;
+}

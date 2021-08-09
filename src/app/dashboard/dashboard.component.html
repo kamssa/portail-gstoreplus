@@ -1,0 +1,64 @@
+<div class="container">
+  <br><br><br><br><br><br>
+  <div *ngIf="editMode; else newDash">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="titre-dashboard">Profil</h2>
+              <p style="color: #4762f0;"><span class="titre">CNI :</span> {{personne?.numCni}}</p>
+              <p><span class="titre">Nom :</span> {{personne?.nom}}</p>
+              <p><span class="titre">Prénom :</span> {{personne?.prenom}}</p>
+              <p><span class="titre">Domicile :</span> {{personne?.adresse?.ville}}</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h2 class="titre-dashboard">Mode de paiement</h2>
+              <p><span class="titre">Montant :</span> </p>
+              <p><span class="titre">Numéro du Reçu :</span>Ter202020102552n</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h2 class="titre-dashboard">Références du vendeur</h2>
+              <p><span class="titre">Nom Commercial:</span> Gstoreplus</p>
+              <p><span class="titre">Siège :</span>Abidjan / Cocody Sité ATCI</p>
+              <p><span class="titre">Numéro mobile :</span>+255 896 825 20</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 pt-2">
+          <h3>Localisation Géographique de votre terrain</h3>
+          <div class="container" *ngIf="editMode">
+            <agm-map
+              [latitude]="latitude"
+              [longitude]="longitude"
+              [zoom]="zoom" [mapTypeId]='googleMapType'>
+              <agm-marker
+                [latitude]="latitude"
+                [longitude]="longitude"></agm-marker>
+            </agm-map>
+
+          </div>
+          <h4 class="font-weight-bolder pt-3 ">Description du Terrain</h4>
+
+          <div class="card card-p">
+            <p class="titre-p ml-3 pt-2">{{detailTerrain?.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #newDash>
+    <h1 style="color: #0d47a1">Oups! Vous devez vous abonné à notre système de géolocalisation
+      <img src="./assets/img/oups.png" class="img-fluid" alt="" width="200" height="200">
+
+    </h1>
+  </ng-template>
+
+</div>
+
+
+

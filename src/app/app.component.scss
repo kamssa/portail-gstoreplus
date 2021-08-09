@@ -1,0 +1,46 @@
+.navbar{
+  top: 0;
+  width: 100%;
+  background-color: #052051;
+  min-height: 12vh;
+  position: fixed;
+  z-index: 12;
+}
+
+.navbar-default .navbar-nav > li > a{
+  color:#000;
+
+}
+
+.nav-item .nav-link{
+  color: blue;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.nav-item .nav-link.active{
+  color: red;
+}
+
+.nav-item .nav-link:hover{
+  color: red;
+}
+
+.navbar.solid {
+  background-color: #490D40;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px grey;
+  color: white;
+}
+.card{
+  z-index: 0;
+}
+minuscule{
+  text-transform: capitalize;
+}
+.minuscul{
+  text-transform: lowercase;
+}
+#navbarDropdownMenuLink{
+  z-index: 10;
+}

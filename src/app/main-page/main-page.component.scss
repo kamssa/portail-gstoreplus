@@ -1,0 +1,39 @@
+.navbar{
+    position:fixed;
+    width:100%;
+    background-color:transparent;
+    z-index:10;
+    border-radius:0;
+    border-color:transparent;
+    transition: background-color 1s ease 0s;
+    color: white;
+  }
+
+  .navbar-default .navbar-nav > li > a{
+    color:#000;
+
+  }
+
+  .nav-item .nav-link{
+    color: white;
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .nav-item .nav-link.active{
+    color: red;
+  }
+
+  .nav-item .nav-link:hover{
+    color: red;
+  }
+
+  .navbar.solid {
+    background-color: #490D40;
+    transition: background-color 1s ease 0s;
+    box-shadow: 0 0 4px grey;
+    color: white;
+  }
+  .menu{
+
+  }

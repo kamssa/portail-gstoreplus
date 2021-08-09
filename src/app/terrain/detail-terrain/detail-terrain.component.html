@@ -1,0 +1,70 @@
+<div class="container">
+<mat-horizontal-stepper>
+  <mat-step *ngFor="let d of detailTerrains">
+    <ng-template matStepLabel>{{d.libelle}}</ng-template>
+   <br><br><br>
+   <div class="row">
+     <div class="col-md-5">
+       <div class="main-div">
+         <mat-card class="example-card">
+           <mat-card-content>
+             <ngx-gallery  [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+           </mat-card-content>
+         </mat-card>
+       </div>
+     </div>
+     <div class="col-md-7">
+       <h2 style="margin-top: 70px">{{d.libelle}}</h2><br>
+       <div style="font-size: 17px;">
+           <span>
+             <i class="fa fa-star" aria-hidden="true" style="color: #ff6a00;"></i>
+             <i class="fa fa-star" aria-hidden="true" style="color: #ff6a00;"></i>
+             <i class="fa fa-star" aria-hidden="true" style="color: #ff6a00;"></i>
+             <i class="fa fa-star-half-o" aria-hidden="true" style="color: #ff6a00;"></i>
+           </span>
+       </div><br>
+       <div>
+         {{d.description}}
+       </div>
+       <hr>
+       <br>
+       <div class="zoom1">
+         <div class=" text-center pt-3">
+           <div class=" shadow-lg p-3 mb-5 bg-white rounded" (click)="onDemande(d.id)">EFFECTUER UNE DEMANDE</div>
+         </div>
+       </div>
+       <div>
+       </div>
+     </div>
+   </div>
+    <div class="container">
+   <div class="row">
+     <div class="container">
+       <table class="table">
+         <tbody>
+         <tr>
+           <th scope="row"><i class="fa fa-hand-holding-box"></i>&nbsp;Programme</th>
+           <td>{{d.libelle}}</td>
+           <th scope="row"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Localisation</th>
+           <td>{{d.libelle}}</td>
+         </tr>
+         <tr>
+           <th scope="row"><i class="fad fa-receipt"></i>&nbsp;Terrain</th>
+           <td>{{d.superficie}}</td>
+           <th scope="row"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Surface utilisée</th>
+           <td>{{d.surfaceUtilise}}</td>
+         </tr>
+         </tbody>
+       </table>
+     </div>
+   </div>
+ </div><br>
+  </mat-step>
+</mat-horizontal-stepper>
+</div>
+<div class="container-fluid">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31777.33691349497!2d-3.9776399!3d5.3914862999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sci!4v1616606997820!5m2!1sfr!2sci" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+
+

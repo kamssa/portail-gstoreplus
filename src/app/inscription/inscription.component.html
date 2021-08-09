@@ -1,0 +1,105 @@
+<div class="jumbotron jumbotron-fluid" style="background: linear-gradient(to bottom left, #302244 0%, #ffffff 105%);">
+    <div class="container">
+      <h3 style="text-align: center;color: white;padding: 60px;padding-top: 80px; font-size: 45px;">Créer un compte</h3>
+      <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
+    </div>
+  </div><br><br>
+
+
+
+  <div class="container">
+    <div class="row">
+        <div class="offset-md-2 col-md-8" style="text-align: center;">
+          <span style="font-size: 20px;color: red;"> Remplissez les champs pour la création de votre compte</span
+              >
+          </div>
+    </div><br><br>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="intro" class="bg-image shadow-2-strong">
+                <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.8);">
+                  <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <div class="shadow p-5 mb-3 bg-white rounded">
+                              <form [formGroup]="registryForm" (ngSubmit)="onSubmit()" *ngIf="registryForm">
+                                  <div class="row">
+                                    <div class="col ">
+                                      <input type="text" class="form-control" formControlName="prenom"placeholder="Prénoms"
+                                             [ngClass]="{ 'is-invalid': submitted && f.prenom.errors }">
+                                      <div *ngIf="submitted && f.prenom.errors" class="invalid-feedback">
+                                        <div *ngIf="f.prenom.errors.required">Le prenom  est obligatoire</div>
+                                      </div>
+                                    </div> <!-- form-group end.// -->
+                                    <div class="col">
+                                      <input type="text" class="form-control"  formControlName="nom" placeholder="Nom"
+                                             [ngClass]="{ 'is-invalid': submitted && f.nom.errors }">
+                                      <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
+                                        <div *ngIf="f.nom.errors.required">Le nom  est obligatoire</div>
+                                      </div>
+                                    </div> <!-- form-group end.// -->
+                                    </div>
+                                  <br>
+
+                                  <div class="row">
+                                    <div class="col">
+                                      <input type="text" class="form-control"  formControlName="email" placeholder="Email"
+                                             [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                                      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                        <div *ngIf="f.email.errors.required">L'email  est obligatoire</div>
+                                      </div>
+                                    </div> <!-- form-group end.// -->
+                                      <div class="col">
+                                        <label class="">Téléphone</label>
+                                        <input type="text" ng2TelInput [ng2TelInputOptions]="{initialCountry:'ci'}"
+                                               (countryChange)="onCountryChange($event)" formControlName="telephone"
+                                               [ngClass]="{ 'is-invalid': submitted && f.telephone.errors }">
+                                        <div *ngIf="submitted && f.telephone.errors" class="invalid-feedback">
+                                          <div *ngIf="f.telephone.errors.required">Le téléphone  est obligatoire</div>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                  <br>
+                                  <div class="row">
+                                    <div class="col">
+                                         <!-- Password input -->
+                                        <div class="input-group mb-2 mr-sm-2">
+                                          <input class="form-control" type="password" placeholder="Mot de passe" formControlName="password"
+                                                 [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                                          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                            <div *ngIf="f.password.errors.required">Le mot de passe est obligatoire</div>
+                                          </div>
+                                          <div class="input-group-prepend">
+
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                       <!-- Password input -->
+                                        <div class="input-group mb-2 mr-sm-2">
+                                          <input class="form-control" type="password" placeholder="Confirmer mot de passe" formControlName="password"
+                                                 [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                                          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                                            <div *ngIf="f.password.errors.required">La confirmation de passe est obligatoire</div>
+                                          </div>
+                                          <div class="input-group-prepend">
+                                          </div>
+                                        </div>
+                                    </div>
+                                  </div>
+                                    <br>
+                                  <div style="text-align: center;">
+                                    <button type="submit" class="btn btn-block" style="background-color: #302244;color: white;">
+                                        S'inscrire</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div><br><br><br>

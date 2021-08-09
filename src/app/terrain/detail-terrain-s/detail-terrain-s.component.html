@@ -1,0 +1,77 @@
+<div class="">
+        <br><br><br><br><br>
+        <div class="row">
+          <div class="col-md-5">
+            <br><br><br>
+
+            <div class="main-div">
+              <mat-card class="example-card" *ngIf="detailTerrains[1].id">
+                <mat-card-content>
+                  <ngx-gallery  [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <h2 style="margin-top: 70px">{{detailTerrains[1].libelle}}</h2><br>
+            <div style="font-size: 17px;">
+           <span>
+             <i class="fa fa-star" aria-hidden="true" style="color: #ff6a00;"></i>
+             <i class="fa fa-star" aria-hidden="true" style="color: #ff6a00;"></i>
+             <i class="fa fa-star" aria-hidden="true" style="color: #ff6a00;"></i>
+             <i class="fa fa-star-half-o" aria-hidden="true" style="color: #ff6a00;"></i>
+           </span>
+
+            </div><br>
+            <div>
+              {{detailTerrains[1].description}}
+            </div>
+            <hr>
+            <br>
+
+            <div class="zoom1">
+              <div class=" text-center pt-3">
+                <div class=" shadow-lg p-3 mb-5 bg-white rounded" (click)="onDemande(detailTerrain.id)">EFFECTUER UNE DEMANDE</div>
+              </div>
+            </div><br>
+            <div>
+
+            </div>
+          </div>
+
+        </div>
+      </div><br><br><br><br><br><br><br>
+
+
+      <div class="container">
+        <div class="row">
+
+
+          <!-- <div class="col-md-4">jhgyj</div> -->
+        </div>
+
+        <div class="row">
+
+          <div class="container">
+
+            <table class="table">
+
+              <tbody>
+              <tr>
+                <th scope="row"><i class="fa fa-hand-holding-box"></i>&nbsp;Programme</th>
+                <td>{{detailTerrains[1].libelle}}</td>
+                <th scope="row"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Localisation</th>
+                <td>{{detailTerrains[1].libelle}}</td>
+              </tr>
+              <tr>
+                <th scope="row"><i class="fad fa-receipt"></i>&nbsp;Terrain</th>
+                <td>{{detailTerrains[1].superficie}}</td>
+                <th scope="row"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Surface utilisée</th>
+                <td>{{detailTerrains[1].surfaceUtilise}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div><br>
+

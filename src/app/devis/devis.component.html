@@ -1,0 +1,67 @@
+
+
+<div class="jumbotron jumbotron-fluid" style="background: linear-gradient(to bottom left, #302244 0%, #ffffff 105%);">
+    <div class="container">
+      <h3 style="text-align: center;color: white;padding: 60px;padding-top: 80px; font-size: 45px;">Demande Dévis</h3>
+      <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
+    </div>
+  </div><br><br>
+
+
+  <div class="container">
+      <div class="row">
+          <div class="offset-md-2 col-md-8" style="text-align: center;">
+            <span style="font-size: 20px;color: red;"> Remplissez les champs pour votre demande de devis</span
+                >
+            </div>
+      </div><br>
+      <div class="row">
+          <div class="offset-md-1 col-md-10">
+              <div class="shadow p-5 mb-5 bg-white rounded">
+                <form method="POST" action="">
+                    <div class="row">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Nom">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Prénoms">
+                        </div>
+                      </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col">
+                          <input type="email" class="form-control" placeholder="Email : xxx@gmail.hhh">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Catégorie">
+                        </div>
+                      </div>
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>Sélectionnez une ville</option>
+                                <option>Abidjan</option>
+                                <option>Bassam</option>
+                                <option>Yamoussoukro</option>
+                                <option>Bingerville</option>
+                              </select>
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Entrez votre téléphone (+indicatif)">
+                        </div>
+                      </div>
+                    <br>
+                    <div class="form-group">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Votre message" rows="3"></textarea>
+                    </div><br>
+                    <div style="text-align: center;">
+                    <button type="submit" class="btn btn-lg btn-block btn-success" (click)="envoyer()">
+                        Envoyer <i class="fa fa-send"></i></button>
+                    </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>

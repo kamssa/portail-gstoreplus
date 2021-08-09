@@ -1,0 +1,66 @@
+.container{
+  margin-top: 70px;
+  z-index: 0;
+}
+a{
+  color: grey;
+}
+
+#breadcrumb-container, #category-breadcrumb {
+  padding: 15px 0;
+  font: 13px/18px Oswald,Arial,sans-serif;
+}
+#breadcrumb-container {
+  background: transparent;
+  margin-bottom: 50px;
+}
+.breadcrumb {
+  padding: 0;
+  margin-bottom: 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+.breadcrumb>li {
+  display: inline-block;
+}
+#breadcrumb-container .breadcrumb a {
+  color: grey;
+}
+#breadcrumb-container .breadcrumb a:hover {
+  color: #ff6a00;
+}
+.breadcrumb>.active {
+  color: grey;
+}
+
+#lislide{
+  width: 100%;
+
+  /*background: blue;*/
+}
+
+.check{
+  margin-right: 10px;
+  padding-top: 20px;
+  /*padding-bottom: 20px;*/
+  padding-left: 40px;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.35);
+}
+
+.zoom:hover{
+  cursor: pointer;
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+}
+.zoom1 {
+  transition: transform .2s; /* Animation */
+}
+
+.zoom1:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.example-card{
+  z-index: 10;
+}
