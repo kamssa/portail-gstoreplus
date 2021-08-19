@@ -29,14 +29,14 @@ export class DetailFlashMaisonService {
     console.log('methode du service qui modifier terrain', detailFlashMaison);
     return this.http.put<Resultat<DetailFlashMaison>>(`${environment.apiUrl}/api/detailFlashMaison`, detailFlashMaison);
   }
-  getDetailMaisonByIdFlash(id: number): Observable<Resultat<DetailFlashMaison>> {
-    return this.http.get<Resultat<DetailFlashMaison>>(`${environment.apiUrl}/api/detailFlashyIdflash/${id}`);
+  getDetailMaisonByIdFlash(id: number): Observable<Resultat<DetailFlashMaison[]>> {
+    return this.http.get<Resultat<DetailFlashMaison[]>>(`${environment.apiUrl}/api/detailFlashByIdflash/${id}`);
   }
   getDetailFlashMaisonById(id: number): Observable<Resultat<DetailFlashMaison>> {
     return this.http.get<Resultat<DetailFlashMaison>>(`${environment.apiUrl}/api/detailFlashMaison/${id}`);
   }
   getImageDetailByIdDetail(id: number): Observable<Resultat<ImageDetail[]>> {
-    return this.http.get<Resultat<ImageDetail[]>>(`${environment.apiUrl}/api/imageDetailFlashMaison/${id}`);
+    return this.http.get<Resultat<ImageDetail[]>>(`${environment.apiUrl}/api/imageFlashByIdFlash/${id}`);
   }
   supprimerDetailFlashMaison(id: number): Observable<any> {
     return this.http.delete(`${environment.apiUrl}/api/detailFlashMaison/${id}`)

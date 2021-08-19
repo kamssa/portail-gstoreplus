@@ -17,6 +17,10 @@ import {DetailTerrainComponent} from "./terrain/detail-terrain/detail-terrain.co
 import {DemandeComponent} from "./demande/demande/demande.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {AuthGuardService} from "./helper/auth-guard.service";
+import {DetailFlashMaison} from "./models/DetailFlashMaison";
+import {DetailFlashMaisonComponent} from "./flashMaison/detail-flash-maison/detail-flash-maison.component";
+import {DetailMaison} from "./models/DetailMaison";
+import {DetailMaisonComponent} from "./maison/detail-maison/detail-maison.component";
 
 
 const routes: Routes = [
@@ -49,8 +53,8 @@ const routes: Routes = [
   { path: 'inscription', component: InscriptionComponent },
   { path: 'connexion', component: ConnexionComponent },
   {path: 'detailTerrain/:id' , component: DetailTerrainComponent},
-  {path: 'detailMaison/:id' , component: DetailTerrainComponent},
-  {path: 'detailFlashMaison/:id' , component: DetailTerrainComponent},
+  {path: 'detailMaison/:id' , component: DetailMaisonComponent},
+  {path: 'detailFlashMaison/:id' , component: DetailFlashMaisonComponent},
   { path: 'demande/:id', component: DemandeComponent},
   { path: 'dashboard/:id',
     component: DashboardComponent,

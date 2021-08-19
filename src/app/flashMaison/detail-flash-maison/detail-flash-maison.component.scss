@@ -1,3 +1,7 @@
+.container{
+  margin-top: 70px;
+  z-index: 0;
+}
 a{
   color: grey;
 }
@@ -49,4 +53,14 @@ a{
   -ms-transform: scale(1.5); /* IE 9 */
   -webkit-transform: scale(1.5); /* Safari 3-8 */
   transform: scale(1.5);
+}
+.zoom1 {
+  transition: transform .2s; /* Animation */
+}
+
+.zoom1:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+.example-card{
+  z-index: 10;
 }

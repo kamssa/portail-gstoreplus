@@ -54,4 +54,7 @@ export class AppComponent {
     this.router.navigate(['dashboard', id]);
   }
 
+  openPaiement(id: number) {
+
+  }
 }

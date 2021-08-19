@@ -28,15 +28,15 @@
     <div class="container">
       <!--Section: Content-->
       <section class="text-center">
-        <h4 class="mb-5"><strong>Tous nos maisons et appartements à vendre</strong></h4>
+        <h4 class="mb-5"><strong>Nos programmes immobilier</strong></h4>
 
         <div class="row">
-          <div class="col-lg-4 col-md-12 mb-4">
+          <div class="col-lg-4 col-md-12 mb-4" *ngFor="let maison of maisons">
             <div class="card">
               <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="../../assets/img/blogs/blog1.jpg" class="img-fluid" />
+                <img [src]="maison.path" alt="Card image cap" class="img-fluid" />
                 <a routerLink="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">Situé à Abidjan</div>
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">Situé à {{maison.ville.libelle}}</div>
                 </a>
               </div>
               <div class="card-body">
@@ -46,118 +46,20 @@
                  <!-- Some quick example text to build on the card title and make up the bulk of the
                   card's content.-->
                 </p>
-                <a  class="btn btn-primary" (click)="onDetailMaison()">Détails</a>
+                <a  class="btn btn-primary" (click)="onDetailMaison(maison.id)">Détails</a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="../../assets/img/blogs/blog2.jpg" class="img-fluid" />
-                <a routerLink="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">Situé à Abidjan</div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Prix: ??? FCFA</h5>
 
-                <p class="card-text">
-                  <!--Some quick example text to build on the card title and make up the bulk of the
-                  card's content.-->
-                </p>
-                <a  class="btn btn-primary" (click)="onDetailMaison()">Détails</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="../../assets/img/blogs/blog3.jpg" class="img-fluid" />
-                <a routerLink="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">Situé à Abidjan</div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Prix: ??? FCFA</h5>
-
-                <p class="card-text">
-                 <!-- Some quick example text to build on the card title and make up the bulk of the
-                  card's content.-->
-                </p>
-                <a  class="btn btn-primary" (click)="onDetailMaison()">Détails</a>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-12 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="../../assets/img/blogs/blog4.jpg" class="img-fluid" />
-                <a routerLink="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">Situé à Abidjan</div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Prix: ??? FCFA</h5>
 
-                <p class="card-text">
-                 <!-- Some quick example text to build on the card title and make up the bulk of the
-                  card's content.-->
-                </p>
-                <a  class="btn btn-primary" (click)="onDetailMaison()">Détails</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="../../assets/img/blogs/blog5.jpg" class="img-fluid" />
-                <a routerLink="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">Situé à Abidjan</div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Prix: ??? FCFA</h5>
-
-                <p class="card-text">
-                 <!-- Some quick example text to build on the card title and make up the bulk of the
-                  card's content.-->
-                </p>
-                <a class="btn btn-primary" (click)="onDetailMaison()">Détails</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card">
-              <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                <img src="../../assets/img/blogs/blog6.jpg" class="img-fluid" />
-                <a routerLink="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);">Situé à Abidjan</div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h5 class="card-title">Prix: ??? FCFA</h5>
-
-                <p class="card-text">
-                 <!-- Some quick example text to build on the card title and make up the bulk of the
-                  card's content.-->
-                </p>
-                <a  class="btn btn-primary" (click)="onDetailMaison()">Détails</a>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
       <!--Section: Content-->
 
       <!-- Pagination -->
-      <nav class="my-4" aria-label="...">
+    <!--  <nav class="my-4" aria-label="...">
         <ul class="pagination pagination-circle justify-content-center">
           <li class="page-item">
             <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
@@ -171,7 +73,7 @@
             <a class="page-link" href="#">Next</a>
           </li>
         </ul>
-      </nav>
+      </nav>-->
     </div>
   </main>
   <!--Main layout-->

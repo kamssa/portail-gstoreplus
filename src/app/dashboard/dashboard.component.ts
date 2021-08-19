@@ -7,6 +7,8 @@ import {ActivatedRoute, ParamMap, Router} from "@angular/router";
 import {TerrainAcheterService} from "../service/terrain-acheter.service";
 import {switchMap} from "rxjs/operators";
 import {DetailTerrain} from "../models/DetailTerrain";
+import {TerrainVenduService} from "../service/terrain-vendu.service";
+import {TerrainVendu} from "../models/TerrainVendu";
 
 declare var google;
 @Component({
@@ -20,6 +22,8 @@ export class DashboardComponent implements OnInit {
   value = 'Clear me';
   private mediaSub: Subscription;
   terrainAcheter: TerrainAcheter;
+  terrainVendu: TerrainVendu;
+  terrainVendus: TerrainVendu[];
   edit = false;
   title: string = 'AGM project';
   latitude: any;
@@ -35,32 +39,43 @@ export class DashboardComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private  router: Router,
               private terrainAcheterService: TerrainAcheterService,
+              private terrainVenduService: TerrainVenduService,
               private cdRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.terrainAcheterService.getTerrainAcheterByIdPersonne(+params.get('id')))
+        this.terrainVenduService.getTerrainVenduByIdPersonne(+params.get('id')))
     ).subscribe(result => {
       if(result){
-
         console.log('terrain acheter ramené', result);
-        this.terrainAcheter = result.body;
-        this.detailTerrain = this.terrainAcheter.detailTerrain;
-        this.personne = this.terrainAcheter.personne;
+        this.terrainVendus = result.body;
         this.editMode = true;
-        console.log('Voir les produit ramené', this.terrainAcheter);
+        this.zoom = 1000;
+        console.log('Voir les produit ramené', this.terrainVendus);
+        /*this.terrainVendus.forEach(v =>{
+          if ('geolocation' in navigator) {
+            navigator.geolocation.getCurrentPosition((position) => {
+              this.latitude = v.latitude;
+              this.longitude = v.longitude;
+
+            });
+
+          }
+          }
+        );*/
+
       }
 
     });
-    this.setCurrentLocation();
+   // this.setCurrentLocation();
   }
   // Get Current Location Coordinates
   private setCurrentLocation() {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
-        this.latitude = this.terrainAcheter.detailTerrain.latitude;
-        this.longitude = this.terrainAcheter.detailTerrain.longitude;
+        this.latitude = this.terrainVendu.latitude;
+        this.longitude = this.terrainVendu.longitude;
         this.zoom = 1000;
       });
     }

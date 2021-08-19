@@ -1,3 +1,4 @@
+<!--
 <div class="container">
   <br><br><br><br><br>
   <div class="row">
@@ -5,12 +6,12 @@
       <br><br><br>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="border: 1px solid lightgrey;">
 
-        <!--<ol class="carousel-indicators">
+        <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"
               id="lislide" *ngFor="let item of photo;let index = index" [attr.data-slide-to]="index">
             <img [src]="item.imageUrl" class="d-block w-100" alt="..." style="border: 1px solid grey;">
           </li>
-        </ol>-->
+        </ol>
 
         <div class="carousel-inner" style="background: lightgrey;" *ngIf="photo">
           <div class="carousel-item active" *ngFor="let item of photo;let index = index;let isFirst = first" [ngClass]="{active:isFirst}">
@@ -63,7 +64,7 @@
   <div class="row">
 
 
-    <!-- <div class="col-md-4">jhgyj</div> -->
+    &lt;!&ndash; <div class="col-md-4">jhgyj</div> &ndash;&gt;
   </div>
 
   <div class="row">
@@ -86,7 +87,7 @@
           <td>100ha</td>
         </tr>
 
-        <!-- <tr>
+        &lt;!&ndash; <tr>
            <th scope="row"><i class="fa fa-bed" aria-hidden="true"></i>&nbsp; Chambres</th>
            <td>3</td>
            <th scope="row"><i class="fa fa-bath" aria-hidden="true"></i>&nbsp; Salle d'eau</th>
@@ -98,9 +99,9 @@
            <td>1</td>
            <th scope="row"><i class="fa fa-building" aria-hidden="true"></i>&nbsp; Terrasse </th>
            <td>2</td>
-         </tr>-->
+         </tr>&ndash;&gt;
 
-        <!-- <tr>
+        &lt;!&ndash; <tr>
            <th scope="row"><i class="fas fa-bacon"></i>&nbsp; Cuisine</th>
            <td>1</td>
            <th scope="row"><i class="fa fa-ship" aria-hidden="true"></i>&nbsp; Buanderie</th>
@@ -115,13 +116,240 @@
          <tr>
            <th scope="row"><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp;Prix</th>
            <td>80.000.000 F CFA</td>
-         </tr>-->
+         </tr>&ndash;&gt;
         </tbody>
       </table>
     </div>
   </div>
 </div><br>
 
+<div class="container-fluid">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31777.33691349497!2d-3.9776399!3d5.3914862999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sci!4v1616606997820!5m2!1sfr!2sci" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+
+
+-->
+<!--
+<div class="container">
+  <br><br><br><br><br>
+  <div class="row">
+    <div class="col-md-5 col-lg-5 col-sm-5" *ngIf="photo">
+      <br><br><br>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="border: 1px solid lightgrey;">
+
+        &lt;!&ndash;<ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"
+              id="lislide" *ngFor="let item of photo;let index = index" [attr.data-slide-to]="index">
+            <img [src]="item.imageUrl" class="d-block w-100" alt="..." style="border: 1px solid grey;">
+          </li>
+        </ol>&ndash;&gt;
+
+        <div class="carousel-inner" style="background: lightgrey;" *ngIf="photo">
+          <div class="carousel-item active" *ngFor="let item of photo;let index = index;let isFirst = first" [ngClass]="{active:isFirst}">
+			    	<span class='zoom' id='ex1'>
+			      		<img [src]="item.imageUrl" class="d-block w-100" alt="...">
+			      </span>
+          </div>
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-7 col-lg-7 col-sm-7" *ngIf="detailFlashMaison">
+      <h2 style="margin-top: 70px">{{detailFlashMaison?.flashMaison?.libelle}}</h2><br>
+      <div style="font-size: 17px;">
+					<span>
+						<i class="fa fa-star" aria-hidden="true" style="color: #ff6a00;"></i>
+						<i class="fa fa-star" aria-hidden="true" style="color: #ff6a00;"></i>
+						<i class="fa fa-star" aria-hidden="true" style="color: #ff6a00;"></i>
+						<i class="fa fa-star-half-o" aria-hidden="true" style="color: #ff6a00;"></i>
+					</span>
+
+      </div><br>
+      <div>
+        {{detailFlashMaison?.flashMaison?.description}}
+      </div>
+      <hr>
+      <br>
+
+      <div>
+
+      </div><br>
+      <div>
+
+      </div>
+    </div>
+
+  </div>
+</div><br><br><br><br><br><br><br>
+
+
+<div class="container" *ngIf="detailFlashMaison">
+  <div class="row">
+
+
+    &lt;!&ndash; <div class="col-md-4">jhgyj</div> &ndash;&gt;
+  </div>
+
+  <div class="row">
+
+    <div class="container">
+
+      <table class="table">
+
+        <tbody>
+        <tr>
+          <th scope="row"><i class="fa fa-hand-holding-box"></i>&nbsp;Programme</th>
+          <td>{{detailFlashMaison?.flashMaison?.libelle}}</td>
+          <th scope="row"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Localisation</th>
+          <td>{{detailFlashMaison?.flashMaison?.libelle}}</td>
+        </tr>
+        <tr>
+          <th scope="row"><i class="fad fa-receipt"></i>&nbsp;Terrain</th>
+          <td>500m²</td>
+          <th scope="row"><i class="fa fa-home" aria-hidden="true"></i>&nbsp; Surface utilisée</th>
+          <td>100ha</td>
+        </tr>
+
+        &lt;!&ndash; <tr>
+           <th scope="row"><i class="fa fa-bed" aria-hidden="true"></i>&nbsp; Chambres</th>
+           <td>3</td>
+           <th scope="row"><i class="fa fa-bath" aria-hidden="true"></i>&nbsp; Salle d'eau</th>
+           <td>2</td>
+         </tr>
+
+         <tr>
+           <th scope="row"><i class="fa fa-bath" aria-hidden="true"></i> &nbsp;Salle d'eau (WC visiteur)</th>
+           <td>1</td>
+           <th scope="row"><i class="fa fa-building" aria-hidden="true"></i>&nbsp; Terrasse </th>
+           <td>2</td>
+         </tr>&ndash;&gt;
+
+        &lt;!&ndash; <tr>
+           <th scope="row"><i class="fas fa-bacon"></i>&nbsp; Cuisine</th>
+           <td>1</td>
+           <th scope="row"><i class="fa fa-ship" aria-hidden="true"></i>&nbsp; Buanderie</th>
+           <td>1</td>
+         </tr>
+         <tr>
+           <th scope="row"><i class="fa fa-couch" aria-hidden="true"></i>&nbsp;Séjour et salle à manger</th>
+           <td>1</td>
+           <th scope="row"><i class="fas fa-person-booth"></i>&nbsp;Dressing</th>
+           <td>1</td>
+         </tr>
+         <tr>
+           <th scope="row"><i class="fa fa-credit-card" aria-hidden="true"></i>&nbsp;Prix</th>
+           <td>80.000.000 F CFA</td>
+         </tr>&ndash;&gt;
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div><br>
+
+<div class="container-fluid">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31777.33691349497!2d-3.9776399!3d5.3914862999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sci!4v1616606997820!5m2!1sfr!2sci" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+&lt;!&ndash;&ndash;&gt;
+
+
+-->
+<div class="container">
+  <mat-horizontal-stepper>
+    <mat-step *ngFor="let d of detailMaisons">
+      <ng-template matStepLabel>{{d?.maison?.libelle}}</ng-template>
+      <br><br><br>
+      <div class="row">
+        <div class="col-md-5">
+          <div class="main-div">
+            <mat-card class="example-card">
+              <mat-card-content>
+                <ngx-gallery  [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <h2 style="margin-top: 70px">{{d?.maison.libelle}}</h2><br>
+          <div style="font-size: 17px;">
+           <span>
+             <i class="fa fa-star" aria-hidden="true" style="color: #ff6a00;"></i>
+             <i class="fa fa-star" aria-hidden="true" style="color: #ff6a00;"></i>
+             <i class="fa fa-star" aria-hidden="true" style="color: #ff6a00;"></i>
+             <i class="fa fa-star-half-o" aria-hidden="true" style="color: #ff6a00;"></i>
+           </span>
+          </div><br>
+          <div>
+            {{d?.description}}
+          </div>
+          <hr>
+          <br>
+          <div class="zoom1">
+            <div class=" text-center pt-3">
+              <div class=" shadow-lg p-3 mb-5 bg-white rounded" (click)="onDemande(d.id)">EFFECTUER UNE DEMANDE</div>
+            </div>
+          </div>
+          <div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="container">
+            <table class="table">
+              <tbody>
+              <tr>
+                <th scope="row"><i class="fa fa-hand-holding-box"></i>&nbsp;Libellé</th>
+                <td>{{d?.libelle}}</td>
+                <th scope="row">Description</th>
+                <td>{{d?.description}}</td>
+
+              </tr>
+              <tr>
+                <th scope="row"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;Localisation</th>
+                <td>{{d?.maison.ville.libelle}}</td>
+
+              </tr>
+              <tr>
+                <th scope="row"><i class="fa fa-hand-holding-box"></i>&nbsp;Prix</th>
+                <td>{{d?.prix | number}} CFA</td>
+                <th scope="row">Nombre de chambre</th>
+                <td>{{d?.nbreChambre}}</td>
+              </tr>
+              <tr>
+                <th scope="row"><i class="fa fa-hand-holding-box"></i>&nbsp;Nombre de salle d'eau</th>
+                <td>{{d?.nbreSalleEau}}</td>
+                <th scope="row">Nombre de cuisine</th>
+                <td>{{d?.nbreCuisine}}</td>
+              </tr>
+              <tr>
+                <th scope="row"><i class="fa fa-hand-holding-box"></i>&nbsp;Bouanderie</th>
+                <td>{{d?.nbreSaleMange}}</td>
+                <th scope="row">Nombre de bouanderie</th>
+                <td>{{d?.nbreBuanderie}}</td>
+              </tr>
+              <tr>
+                <th scope="row"><i class="fa fa-hand-holding-box"></i>&nbsp;Nombre de terrasse</th>
+                <td>{{d?.nbreTerrasse}}</td>
+                <th scope="row">Document disponible</th>
+                <td>{{d?.document.libelle}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div><br>
+    </mat-step>
+  </mat-horizontal-stepper>
+</div>
 <div class="container-fluid">
   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31777.33691349497!2d-3.9776399!3d5.3914862999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sci!4v1616606997820!5m2!1sfr!2sci" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>

@@ -27,6 +27,9 @@
           <a class="nav-link" routerLink="/investissement" routerLinkActive="active">Investissement</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" routerLink="/blog" routerLinkActive="active">Blog</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" routerLink="/contacts" routerLinkActive="active">Contacts</a>
         </li>
         <button mat-button [matMenuTriggerFor]="menu" *ngIf="!personne">Compte</button>
@@ -43,6 +46,8 @@
             <a class="dropdown-item" href="#">{{personne.email}}</a>
             <div class="dropdown-divider"></div>
             <a  class="dropdown-item"  (click)="openDash(personne.id)" >Mon tableau de bord</a>
+            <div class="dropdown-divider"></div>
+            <a  class="dropdown-item"  (click)="openPaiement(personne.id)" >Mes paiements</a>
             <div class="dropdown-divider"></div>
             <a  class="dropdown-item"  (click)="logout()" >Déconnexion</a>
           </div>

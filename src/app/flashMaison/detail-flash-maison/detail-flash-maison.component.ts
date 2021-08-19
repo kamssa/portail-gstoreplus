@@ -13,6 +13,7 @@ import {FlashMaison} from "../../models/FlashMaison";
 import {DetailFlashMaison} from "../../models/DetailFlashMaison";
 import {FlashMaisonService} from "../../service/flash-maison.service";
 import {DetailFlashMaisonService} from "../../service/detail-flash-maison.service";
+import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from "ngx-gallery-9";
 
 @Component({
   selector: 'app-detail-flash-maison',
@@ -22,16 +23,22 @@ import {DetailFlashMaisonService} from "../../service/detail-flash-maison.servic
 export class DetailFlashMaisonComponent implements OnInit {
   flashMaison: FlashMaison;
   detailFlashMaison: DetailFlashMaison;
+  detailFlashMaisons: DetailFlashMaison[];
   terrainId: number;
-  photo: any[];
+  photo: any;
+  photos: any[];
   value = 'Clear me';
   private mediaSub: Subscription;
-  terrains: Terrain[];
-  edit = false;
+
   title = 'AGM project';
   latitude: number;
   longitude: number;
   zoom: number;
+  public path: string;
+  galleryOptions: NgxGalleryOptions[];
+  galleryImages: NgxGalleryImage[];
+  pathNullImage = './assets/img/maison.jpg';
+  liens: string[] = [];
   constructor(private route: ActivatedRoute,
               private  router: Router,
               private flashMaisonService: FlashMaisonService,
@@ -45,17 +52,60 @@ export class DetailFlashMaisonComponent implements OnInit {
         this.detailFlashMaisonService.getDetailMaisonByIdFlash(+params.get('id')))
     ).subscribe(result => {
       if (result.status === 0){
-        this.detailFlashMaison = result.body;
-        console.log('detailTerrain', this.detailFlashMaison);
-        this.detailFlashMaisonService.getImageDetailByIdDetail(this.detailFlashMaison.id)
-          .subscribe(data => {
-            this.photo = data.body;
-            console.log('Photo', this.photo);
-          });
-      }else {
-        console.log('valeur null');
+        this.detailFlashMaisons = result.body;
+        console.log('detailTerrain', this.detailFlashMaisons);
+        this.detailFlashMaisons.forEach(value => {
+          this.detailFlashMaison = value;
+          this.detailFlashMaisonService.getImageDetailByIdDetail(value.id)
+            .subscribe(data => {
+              this.photos = data.body;
+              this.photos.forEach(value => {
+                this.photo = value;
+                this.path = value.imageUrl;
+                let lien : string = value.imageUrl;
+                this.liens.push(lien);
+                let rabl: any = [];
+                for (let i = 0; i < this.liens.length; ++i){
+                  rabl.push(  {
+                    small:  this.liens[i],
+                    medium: this.liens[i],
+                    big: this.liens[i]
+                  });
+                }
+                this.galleryImages = rabl;
+                console.log('map', this.detailFlashMaison);
+              });
+            }, error => {
+              console.log('valeur null');
+            });
+        });
+
       }
     });
+    this.galleryOptions = [
+      {
+        width: '410px',
+        height: '400px',
+        thumbnailsColumns: 4,
+        imageAnimation: NgxGalleryAnimation.Slide
+      },
+      // max-width 800
+      {
+        breakpoint: 800,
+        width: '100%',
+        height: '600px',
+        imagePercent: 80,
+        thumbnailsPercent: 20,
+        thumbnailsMargin: 20,
+        thumbnailMargin: 20
+      },
+      // max-width 400
+      {
+        breakpoint: 400,
+        preview: false
+      }
+    ];
+
     this.setCurrentLocation();
 
   }

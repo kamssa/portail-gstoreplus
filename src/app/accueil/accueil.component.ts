@@ -74,7 +74,7 @@ flashMaisons: FlashMaison[];
     this.router.navigate(['detailTerrain', id]);
   }
   onDetailFlasMaison(id: number) {
-    console.log('Voir id', id);
+    console.log('Voir flash id', id);
     this.router.navigate(['detailFlashMaison', id]);
   }
   getCurrentUser(){

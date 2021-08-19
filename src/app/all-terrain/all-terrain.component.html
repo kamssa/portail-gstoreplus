@@ -26,9 +26,9 @@
     <div class="container">
       <!--Section: Content-->
       <section class="text-center">
-        <h4 class="mb-5"><strong>Tous nos terrains</strong></h4>
+        <h4 class="mb-5"><strong>Nos programmes fonciers</strong></h4>
 
-        <div class="row">
+      <!--  <div class="row">
           <div class="col-lg-4 col-md-12 mb-4">
             <div class="card">
               <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
@@ -41,15 +41,15 @@
                 <h5 class="card-title">Prix : ??? FCFA</h5>
 
                 <p class="card-text">
-                 <!-- Some quick example text to build on the card title and make up the bulk of the
-                  card's content.-->
+                 &lt;!&ndash; Some quick example text to build on the card title and make up the bulk of the
+                  card's content.&ndash;&gt;
                 </p>
                 <a  class="btn btn-primary" (click)="onDetailMaison()">Détails</a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 mb-4">
+         &lt;!&ndash; <div class="col-lg-4 col-md-6 mb-4">
             <div class="card">
               <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <img src="../../assets/img/blogs/blog2.jpg" class="img-fluid" />
@@ -61,8 +61,8 @@
                 <h5 class="card-title">Prix : ??? FCFA FCFA</h5>
 
                 <p class="card-text">
-                 <!-- Some quick example text to build on the card title and make up the bulk of the
-                  card's content.-->
+                 &lt;!&ndash; Some quick example text to build on the card title and make up the bulk of the
+                  card's content.&ndash;&gt;
                 </p>
                 <a  class="btn btn-primary" (click)="onDetailMaison()">Détails</a>
               </div>
@@ -81,13 +81,13 @@
                 <h5 class="card-title">Prix : ??? FCFA</h5>
 
                 <p class="card-text">
-                  <!--Some quick example text to build on the card title and make up the bulk of the
-                  card's content.-->
+                  &lt;!&ndash;Some quick example text to build on the card title and make up the bulk of the
+                  card's content.&ndash;&gt;
                 </p>
                 <a class="btn btn-primary" (click)="onDetailMaison()">Détails</a>
               </div>
             </div>
-          </div>
+          </div>&ndash;&gt;
         </div>
 
         <div class="row">
@@ -103,8 +103,8 @@
                 <h5 class="card-title">Prix : ??? FCFA</h5>
 
                 <p class="card-text">
-                <!--  Some quick example text to build on the card title and make up the bulk of the
-                  card's content.-->
+                &lt;!&ndash;  Some quick example text to build on the card title and make up the bulk of the
+                  card's content.&ndash;&gt;
                 </p>
                 <a  class="btn btn-primary" (click)="onDetailMaison()">Détails</a>
               </div>
@@ -123,8 +123,8 @@
                 <h5 class="card-title">Prix : ??? FCFA</h5>
 
                 <p class="card-text">
-                  <!--Some quick example text to build on the card title and make up the bulk of the
-                  card's content.-->
+                  &lt;!&ndash;Some quick example text to build on the card title and make up the bulk of the
+                  card's content.&ndash;&gt;
                 </p>
                 <a  class="btn btn-primary" (click)="onDetailMaison()">Détails</a>
               </div>
@@ -143,10 +143,26 @@
                 <h5 class="card-title">Prix : ??? FCFA</h5>
 
                 <p class="card-text">
-                 <!-- Some quick example text to build on the card title and make up the bulk of the
-                  card's content.-->
+                 &lt;!&ndash; Some quick example text to build on the card title and make up the bulk of the
+                  card's content.&ndash;&gt;
                 </p>
                 <a  class="btn btn-primary" (click)="onDetailMaison()">Détails</a>
+              </div>
+            </div>
+          </div>
+        </div>-->
+        <div class="row">
+          <div class="col-md-4" *ngFor="let terrain of terrains">
+            <div>
+              <div class="card mb-2">
+                <img class="card-img-top" [src]="terrain.path">
+                <div class="card-body">
+                  <h4 class="card-title">{{terrain.libelle}}</h4>
+                  <p class="card-text">{{terrain.description}}</p>
+                  <div class="demande col-md-8 offset-md-2">
+                    <div  class="shadow p-3 mb-7 bg-white rounded" style="text-align: center; color: #1a237e" (click)="onDetailTerrain(terrain.id)">PLUS DE DETAIL</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -155,7 +171,7 @@
       <!--Section: Content-->
 
       <!-- Pagination -->
-      <nav class="my-4" aria-label="...">
+   <!--   <nav class="my-4" aria-label="...">
         <ul class="pagination pagination-circle justify-content-center">
           <li class="page-item">
             <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
@@ -169,7 +185,7 @@
             <a class="page-link" href="#">Next</a>
           </li>
         </ul>
-      </nav>
+      </nav>-->
     </div>
   </main>
   <!--Main layout-->

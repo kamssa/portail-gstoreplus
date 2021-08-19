@@ -39,12 +39,13 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatMenuModule} from "@angular/material/menu";
 import {RxStompService} from "@stomp/ng2-stompjs";
 import {NgxGalleryModule} from "ngx-gallery-9";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatInputModule} from "@angular/material/input";
-import {MatStepperModule} from "@angular/material/stepper";
 import { DetailTerrainSComponent } from './terrain/detail-terrain-s/detail-terrain-s.component';
 import { DetailTerraintComponent } from './terrain/detail-terraint/detail-terraint.component';
 import { DetailFlashMaisonComponent } from './flashMaison/detail-flash-maison/detail-flash-maison.component';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import { PasswordOublieComponent } from './password-oublie/password-oublie.component';
+registerLocaleData(localeFr);
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { DetailFlashMaisonComponent } from './flashMaison/detail-flash-maison/de
     DashboardComponent,
     DetailTerrainSComponent,
     DetailTerraintComponent,
-    DetailFlashMaisonComponent
+    DetailFlashMaisonComponent,
+    PasswordOublieComponent
   ],
   imports: [
     BrowserModule,

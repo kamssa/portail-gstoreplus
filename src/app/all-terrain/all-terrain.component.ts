@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MatSnackBar, MatSnackBarHorizontalPosition} from "@angular/material/snack-bar";
+import {TerrainService} from "../service/terrain.service";
+import {Router} from "@angular/router";
+import {Produit} from "../models/Produit";
 
 @Component({
   selector: 'app-all-terrain',
@@ -8,9 +11,17 @@ import {MatSnackBar, MatSnackBarHorizontalPosition} from "@angular/material/snac
 })
 export class AllTerrainComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'start';
-  constructor( private _snackBar: MatSnackBar) { }
+  terrains: Produit[];
+  constructor( private _snackBar: MatSnackBar,
+               private terrainService: TerrainService,
+               private  router: Router) { }
 
   ngOnInit(): void {
+    this.terrainService.getAllTerrainAbidjan()
+      .subscribe(res => {
+        console.log(res.body);
+        this.terrains = res.body;
+      });
   }
 
   onDetailMaison(): void {
@@ -21,5 +32,10 @@ export class AllTerrainComponent implements OnInit {
 
     });
 
+  }
+
+  onDetailTerrain(id: number) {
+    console.log('Voir id', id);
+    this.router.navigate(['detailTerrain', id]);
   }
 }

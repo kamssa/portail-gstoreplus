@@ -21,8 +21,8 @@ export class DetailMaisonService {
   }
 
 
-  getDetailMaisonByIdMaison(id: number): Observable<Resultat<DetailTerrain>> {
-    return this.http.get<Resultat<DetailTerrain>>(`${environment.apiUrl}/api/detailMaisonByIdMaison/${id}`);
+  getDetailMaisonByIdMaison(id: number): Observable<Resultat<DetailTerrain[]>> {
+    return this.http.get<Resultat<DetailTerrain[]>>(`${environment.apiUrl}/api/detailMaisonByIdMaison/${id}`);
   }
   getDetailMaisonById(id: number): Observable<Resultat<DetailTerrain>> {
     return this.http.get<Resultat<DetailTerrain>>(`${environment.apiUrl}/api/detailMaison/${id}`);

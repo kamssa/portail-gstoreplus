@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MatSnackBar, MatSnackBarHorizontalPosition} from "@angular/material/snack-bar";
+import {MaisonService} from "../service/maison.service";
+import {Maison} from "../models/Maison";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-all-immobilier',
@@ -7,19 +10,21 @@ import {MatSnackBar, MatSnackBarHorizontalPosition} from "@angular/material/snac
   styleUrls: ['./all-immobilier.component.css']
 })
 export class AllImmobilierComponent implements OnInit {
-  horizontalPosition: MatSnackBarHorizontalPosition = 'start';
-  constructor( private _snackBar: MatSnackBar) { }
+  horizontalPosition: MatSnackBarHorizontalPosition = 'start'
+  maisons: Maison[];
+  constructor( private _snackBar: MatSnackBar,
+               private maisonService: MaisonService, private  router: Router) { }
 
   ngOnInit(): void {
+    this.maisonService.getAllMaison()
+      .subscribe(data => {
+      this.maisons = data.body;
+      });
   }
 
-  onDetailMaison(): void {
-    this._snackBar.open('Bientôt disponible!', '', {
-      duration: 3000,
-      horizontalPosition: this.horizontalPosition,
-      verticalPosition: 'top',
-
-    });
+  onDetailMaison(id: number): void {
+    console.log('Voir flash id', id);
+    this.router.navigate(['detailMaison', id]);
 
   }
 }
