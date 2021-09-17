@@ -22,10 +22,10 @@
       <div class="form-group">
         <label class="">Téléphone</label>
         <mat-form-field>
-          <input matInput ng2TelInput [ng2TelInputOptions]="{initialCountry:'ci'}"
+         <!-- <input matInput ng2TelInput [ng2TelInputOptions]="{initialCountry:'ci'}"
                  (ng2TelOutput)="getNumber($event)"
                  (intlTelInputObject)="telInputObject($event)"
-           (countryChange)="onCountryChange($event)" formControlName="telephone">
+           (countryChange)="onCountryChange($event)" formControlName="telephone">-->
           <mat-error *ngIf="hasError('email', 'required')">Champ obligatoire</mat-error>
         </mat-form-field>
       </div>

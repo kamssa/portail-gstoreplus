@@ -1,8 +1,7 @@
 
 <div class="jumbotron jumbotron-fluid" style="background: linear-gradient(to bottom left, #302244 0%, #ffffff 105%);">
     <div class="container">
-      <h3 style="text-align: center;color: white;padding: 60px;padding-top: 80px; font-size: 45px;">Connexion</h3>
-      <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
+      <h1 style="text-align: center;color: white;padding: 60px;padding-top: 80px;">Connexion</h1>
     </div>
 </div><br><br>
 
@@ -44,7 +43,7 @@
 
                             <div class="col text-center">
                               <!-- Simple link -->
-                              <a href="#!">Mot de Passe oublié ?</a>
+                              <a (click)="passeOublie()">Mot de Passe oublié ?</a>
                             </div>
                           </div>
 
@@ -53,6 +52,8 @@
                             <button type="submit" class="btn btn-block" style="background-color: #302244;color: white;">
                                 Se connecter</button>
                         </div>
+                          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                          <div *ngIf="error" class="btn login_btn">{{error}}</div>
                         </form>
                       </div>
                     </div>

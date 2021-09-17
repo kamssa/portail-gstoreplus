@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg navbar-light  fixed-top">
+  <div class="container-fluid">
+  <a class="img-sm" href="https://www.gstoreplus.ci/"
+     style="color: white">
+    <img src="/assets/img/logo.png"/>
+  </a>
+  <button mat-raised-button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="sr-only">Toggle navigation</span>
+    <span class="navbar-toggler-icon icon-bar"></span>
+    <span class="navbar-toggler-icon icon-bar"></span>
+    <span class="navbar-toggler-icon icon-bar"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="/accueil" routerLinkActive="active">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/a-propos" routerLinkActive="active">A propos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/foncier" routerLinkActive="active" >Fonciers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/immobilier" routerLinkActive="active">Immobiliers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/investissement" routerLinkActive="active">Investissement</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/blog" routerLinkActive="active">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contacts" routerLinkActive="active">Contacts</a>
+        </li>
+        <li>
+          <button mat-button [matMenuTriggerFor]="menu" *ngIf="!personne" class="nav-link">Compte</button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="" style="background: linear-gradient(to bottom left, #302244 0%, #ffffff 105%);"></button>
+            <button mat-menu-item routerLink="/inscription">Créer un compte</button>
+            <button mat-menu-item routerLink="/connexion" >Se connecter</button>
+          </mat-menu>
+          <div class="dropdown" *ngIf="personne">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{personne.nom}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">{{personne.nomComplet}}</a>
+              <a class="dropdown-item" href="#">{{personne.email}}</a>
+              <div class="dropdown-divider"></div>
+              <a  class="dropdown-item"  (click)="openDash(personne.id)" >Mon tableau de bord</a>
+              <div class="dropdown-divider"></div>
+              <a  class="dropdown-item"  (click)="openPaiement(personne.id)" >Mes paiements</a>
+              <div class="dropdown-divider"></div>
+              <a  class="dropdown-item"  (click)="logout()" >Déconnexion</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="navbar-collapse justify-content-end" id="navigation">
+        <form class="navbar-form">
+          <div class="input-group element">
+            <input type="text" value="" class="form-control" style="width: 200px; margin-top: 12px" placeholder="Recherche...">
+            <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+              <i class="material-icons">search</i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</nav>
+

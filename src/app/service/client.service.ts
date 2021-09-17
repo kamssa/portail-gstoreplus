@@ -36,6 +36,10 @@ export class ClientService {
     console.log('methode du service qui ajoute un client', client);
     return this.http.post<Resultat<Client>>(`${environment.apiUrl}/api/auth/signupEmpl`, client);
   }
+  passworClientMofif(client: Personne): Observable<Resultat<Personne>> {
+    console.log('methode du service qui ajoute un client', client);
+    return this.http.put<Resultat<Personne>>(`${environment.apiUrl}/api/auth/updatePassword`, client);
+  }
   getClientById(id: Client): Observable<Resultat<Client>> {
     return this.http.get<Resultat<Client>>(`${environment.apiUrl}/api/auth/client/${id}`);
   }

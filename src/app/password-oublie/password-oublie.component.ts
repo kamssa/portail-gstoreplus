@@ -5,6 +5,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {AuthService} from "../service/auth.service";
 import {ClientService} from "../service/client.service";
 import {Personne} from "../models/Personne";
+import {Client} from "../models/Client";
+import {MatDialog, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-password-oublie',
@@ -20,17 +22,17 @@ export class PasswordOublieComponent implements OnInit {
   loading = false;
   error = '';
   result: any;
-  durationInSeconds = 5;
+  client: Personne;
   horizontalPosition: MatSnackBarHorizontalPosition = 'start';
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
-  isuAth: boolean;
-  hide = true;
+  hide = false;
   constructor( private fb: FormBuilder,
                private route: ActivatedRoute,
                private router: Router,
                private snackBar: MatSnackBar,
                private authService: AuthService,
-               private  clientService: ClientService) { }
+               private  clientService: ClientService,
+               public dialogRef: MatDialogRef<PasswordOublieComponent>) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -44,64 +46,85 @@ export class PasswordOublieComponent implements OnInit {
   get f() { return this.connexionForm.controls; }
   initForm(): void {
     this.connexionForm = this.fb.group({
-      email: ['', [Validators.required]],
-      password: ['', [Validators.required]]
+      email: [''],
+      password: ['', [Validators.required]],
+      confirmPassword: ['', [Validators.required]],
     });
 
   }
-
-  onSubmit() {
+  onSubmitEmail() {
     if (navigator.onLine){
-      this.submitted = true;
+      this.submitted =true;
       // stop here if form is invalid
-      const email = this.connexionForm.get('email').value;
-      const password = this.connexionForm.get('password').value;
+      const email = this.connexionForm.value.email;
       this.clientService.getClientByEmail(email).subscribe(res => {
-        if (res.status === 0){
-          this.loading = true;
+          if (res.status === 0){
+            this.hide = true;
+            this.client = res.body;
+            console.log('Voir le retour', this.client);
+          }else {
+            this.error = "Compte non valide !";
+          }
+        });
 
-          const  client = new Personne(
-            null,
-            null,
-            null,
-            null,
-            null,
-            email,
-            null,
-            null,
-            null,
-            password,
-            null,
-            null,
-            null,
-            null,
-            'CL'
-
-          );
-          this.authService.login(client).subscribe(data => {
-              if (data.body){
-                this.snackBar.open('Succès de la connexion!', '', {
-                  duration: 3000,
-                  horizontalPosition: this.horizontalPosition,
-                  verticalPosition: this.verticalPosition,
-                });
-              }else {
-                this.isuAth = false;
-              }
-              this.router.navigate(['accueil']);
-            },
-            error => {
-              this.loading = false;
-              this.error = "E-mail ou mot de passe oublié! Réessayez svp";
-            });
-        }else {
-          this.error = "Compte non valide !";
-        }
-      });
     }else {
       this.error = 'Vérifiez votre connexion internet s\'il vous plaît';
     }
 
   }
+  onSubmit() {
+    if (navigator.onLine){
+      this.submitted =true;
+      // stop here if form is invalid
+      this.clientService.getClientByEmail(this.client.email).subscribe(res => {
+        if (res.status === 0){
+          this.hide = true;
+          this.client = res.body;
+          console.log(this.client);
+        }else {
+          this.error = "Compte non valide !";
+        }
+      });
+      if (this.connexionForm.value.password === this.connexionForm.value.confirmPassword){
+        const client: Personne = {
+          id:this.client.id,
+          version:this.client.version,
+          titre:this.client.titre,
+          nom:this.client.nom,
+          prenom:this.client.prenom,
+          email:this.client.email,
+          numCni:this.client.numCni,
+          codePays:this.client.codePays,
+          telephone:this.client.telephone,
+          password:this.connexionForm.value.password,
+          fonction:this.client.fonction,
+          nomComplet:this.client.nomComplet,
+          adresse: this.client.adresse,
+          actived: this.client.actived,
+          type: 'CL'
+        };
+        this.clientService.passworClientMofif(client).subscribe(result => {
 
+          this.snackBar.open('Succès de la modification!', '', {
+            duration: 3000,
+            horizontalPosition: this.horizontalPosition,
+            verticalPosition: this.verticalPosition,
+          });
+          this.onClose();
+
+        });
+      }else {
+        this.error =" le mot de passe doit correspondre à la confirmation"
+      }
+
+
+
+    }else {
+      this.error = 'Vérifiez votre connexion internet s\'il vous plaît';
+    }
+
+  }
+  onClose() {
+    this.dialogRef.close();
+  }
 }

@@ -11,8 +11,7 @@ import {ImageDetail} from "../../models/ImageDetail";
 import {DemandeComponent} from "../../demande/demande/demande.component";
 import {MatDialog} from "@angular/material/dialog";
 import {NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions} from "ngx-gallery-9";
-import {Image} from "../../models/Image";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-detail-terrain',

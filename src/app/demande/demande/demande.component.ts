@@ -42,7 +42,6 @@ export class DemandeComponent implements OnInit {
   personne: Personne;
   selectedValue: string;
   code: any;
-  titre: string;
   error = '';
   loading = false;
   toppings = new FormControl();

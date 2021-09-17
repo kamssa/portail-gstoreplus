@@ -1,2 +1,249 @@
-<app-acceuil></app-acceuil>
-<router-outlet></router-outlet>
+<div class="first-header">
+  <div class="row text-center">
+    <div class="col-md-6 pt-4">
+      <i class="fa fa-envelope mr-2"></i>
+      <span>info@gstoreplus.ci</span>
+    </div>
+    <div class="col-md-6 pt-4">
+      <i class="fa fa-phone mr-2"></i>
+      <span>+225 27 23 59 04 39 </span>
+      <i class="fa fa-whatsapp ml-4 mr-2"></i>
+      <span>+225 07 79 59 18 85</span>
+    </div>
+    <div class="marquee-rtl col-md-10">
+      <span>GSTORE PLUS - un ami plus qu’un partenaire</span>
+    </div>
+  </div>
+</div>
+<div >
+  <div *ngFor="let im of imageAccueil" class="container-fluid
+" style="background-color: #eeeff3;min-height: 620px;background-position: center center ; background-size: cover"
+       [ngStyle]="{'background-image': 'url(' + im.path + ')'}">
+   <div class="video">
+    <video controls autoplay autoplay width="250" style="margin-top: 500px">
+      <source src="../../assets/video/video.mp4" type="video/mp4">
+    </video>
+   </div>
+  </div>
+</div>
+<br><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-lg-4">
+      <div style="text-align: center;">
+        <span><i class="fa fa-handshake-o" aria-hidden="true" style="font-size: 50px;color: red;"></i></span>
+        <h4><strong>Notre valeur</strong></h4>
+        <p>Une équipe d’experts dans la conception, la réalisation et le suivi de différents projets de développement.
+          Nous gérons tous nos programmes en organisant, dirigeant des personnes de valeur avec une technologie de pointe</p>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div style="text-align: center;">
+        <span><i class="fa fa-line-chart" aria-hidden="true" style="font-size: 50px;color: red;"></i></span>
+        <h4><strong>Notre Objectif</strong></h4>
+        <p>Préoccupés par l’épanouissement de nos semblables, nos differents programmes
+          visent à créer un cadre de vie agréable et sain pour notre clientèle qui
+          est la priorité de toutes nos actions. L'amour vrai crée de l'amitié.</p>
+      </div>
+    </div>
+    <div class="col-md-6 col-lg-4">
+      <div style="text-align: center;">
+        <span><i class="fa fa-check" aria-hidden="true" style="font-size: 50px;color: red;"></i></span>
+        <h4><strong>Notre slogan</strong></h4>
+        <p>GSTORE PLUS , un ami plus qu’un partenaire.</p>
+      </div>
+    </div>
+  </div>
+</div><br><br><br><br>
+
+<div class="container bg-light pt-5">
+  <div class="row">
+    <div class="col-md-12" >
+      <div style="text-align: center;font-weight: bold;">
+        <h3 style="text-transform: uppercase;color: red;font-size: 25px; text-decoration: underline">Nos Différents Sites</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-light py-5 service-18">
+  <div class="container">
+    <div class="row wrap-service-18">
+      <div class="col-lg-6">
+        <div class="card border-0 mb-4 test" routerLink="/accueil">
+          <div class="row no-gutters">
+            <a  href="/accueil" class="col-md-5 icon-position rounded-left" style="background-image:url(../../assets/img/immobilier.jpg)">
+              <div class="icon-round bg-success-gradiant text-white display-5">I</div>
+            </a>
+            <div class="col-md-7">
+              <div class="card-body ml-0 ml-md-3">
+                <p class="font-weight-medium" style="font-size: x-large;text-transform: uppercase;">GSTORE PLUS  IMMOBILIER</p>
+                <p>Accédez à notre site immobilier pour acheter vos biens.</p>
+                <a href="/accueil" class="linking text-underline" style="font-size: 20px;color: red;"> <i class="ti-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <a href="https://vente.gstoreplus.ci/#/accueil">
+          <div class="card border-0 mb-4 test">
+            <div class="row no-gutters">
+              <div class="col-md-5 icon-position rounded-left" style="background-image:url(../../assets/img/ecommerce.png)">
+                <div class="icon-round bg-success-gradiant text-white display-5">E</div>
+              </div>
+              <div class="col-md-7">
+                <div class="card-body ml-0 ml-md-3">
+                  <p class="font-weight-medium" style="font-size: x-large;text-transform: uppercase;">GSTORE PLUS <br>  E-COMMERCE</p>
+                  <p>Nous avons une boutique en ligne pour tous vos achats en toute sécurité.</p>
+                  <a href="https://vente.gstoreplus.ci/#/accueil" class="linking text-underline" style="font-size: 20px;color: red;"><i class="ti-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card border-0 mb-4 test">
+          <div class="row no-gutters">
+            <div class="col-md-5 icon-position rounded-left" style="background-image:url(../../assets/img/voyage.jpg)">
+              <div class="icon-round bg-success-gradiant text-white display-5">V</div>
+            </div>
+            <div class="col-md-7">
+              <div class="card-body ml-0 ml-md-3">
+                <p class="font-weight-medium" style="font-size: x-large;text-transform: uppercase;">GSTORE PLUS  VOYAGE</p>
+                <p>Nous diposons également d'un service de voyage.</p>
+                <a href="https://voyage.gstoreplus.ci" class="linking text-underline" style="font-size: 20px;color: red;"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="card border-0 mb-4 test">
+          <div class="row no-gutters">
+            <div class="col-md-5 icon-position rounded-left" style="background-image:url(../../assets/img/formation-1.jpg)">
+              <div class="icon-round bg-success-gradiant text-white display-5">F</div>
+            </div>
+            <div class="col-md-7">
+              <div class="card-body ml-0 ml-md-3">
+                <p class="font-weight-medium" style="font-size: x-large;text-transform: uppercase;">GSTORE PLUS  FORMATION</p>
+                <p>En nous confiant vos formations, Vous n'aurez pas fait le mauvais choix.</p>
+                <a href="https://academie.gstoreplus.ci" class="linking text-underline" style="font-size: 20px;color: red;"><i class="ti-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container bg-light pt-5">
+  <div class="row">
+    <div class="col-md-12" >
+      <div style="text-align: center;font-weight: bold;">
+        <h3 style="font-size: 25px;text-transform: uppercase;color: red; text-decoration: underline">Nos Dernières Actualités</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<br><br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card card-blog mb-5">
+        <div class="card-image">
+          <a routerLink="/accueil"> <img class="img" src="/assets/img/unnamed1.jpg"> </a>
+          <div class="ripple-cont"></div>
+        </div>
+        <div class="table">
+          <h6 class="category text-success"> <span><i class="fa fa-newspaper-o"></i> Actualités </span> <span style="text-align: right;margin-left:60px;color: black;"><i class="fa fa-eye"> &nbsp;39 fois</i></span></h6>
+          <h4 class="card-caption">
+            <a routerLink="/accueil">Cité Yehoudi</a>
+          </h4>
+
+          <div class="ftr">
+            <div class="author">
+              <a href="#" style="color: red;"> <i class="fa fa-book"></i> <span>&nbsp;Lire plus</span> </a>
+            </div>
+            <div class="stats"> <i class="fa fa-clock-o"></i>  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card card-blog mb-5">
+        <div class="card-image">
+          <a routerLink="/accueil"> <img class="img" src="/assets/img/f1.jpg"> </a>
+          <div class="ripple-cont"></div>
+        </div>
+        <div class="table">
+          <h6 class="category text-success"> <span><i class="fa fa-newspaper-o"></i> Actualités </span> <span style="text-align: right;margin-left:60px;color: black;"><i class="fa fa-eye">  &nbsp;243 fois</i></span></h6>
+          <h4 class="card-caption">
+            <a routerLink="/accueil">Grominankro  - Yamoussoukro</a>
+          </h4>
+
+          <div class="ftr">
+            <div class="author">
+              <a href="#" style="color: red;"> <i class="fa fa-book"></i> <span>&nbsp;Lire plus</span> </a>
+            </div>
+            <div class="stats"> <i class="fa fa-clock-o"></i>  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card card-blog mb-5">
+        <div class="card-image">
+          <a routerLink="/accueil"> <img class="img" src="/assets/img/3.jpg"> </a>
+          <div class="ripple-cont"></div>
+        </div>
+        <div class="table">
+          <h6 class="category text-success"> <span><i class="fa fa-newspaper-o"></i> Actualités </span> <span style="text-align: right;margin-left:60px;color: black;"><i class="fa fa-eye"> &nbsp;39 fois</i></span></h6>
+          <h4 class="card-caption">
+            <a href="#">Nos maisons</a>
+          </h4>
+          <!--
+                      <p class="card-description"> Lotissement résidentiel avec des morcèlements de lots variés en 600, 700 et 800 m². Prévue dans le mois de Janvier pour le démarrage des travaux. Le site est dans une zone en pleine expansion..</p>
+          -->
+          <div class="ftr">
+            <div class="author">
+              <a routerLink="/accueil" style="color: red;"> <i class="fa fa-book"></i> <span>&nbsp;Lire plus</span> </a>
+            </div>
+            <div class="stats"> <i class="fa fa-clock-o"></i>  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card card-blog mb-5">
+        <div class="card-image">
+          <a routerLink="/accueil"> <img class="img" src="/assets/img/unnamed.jpg"> </a>
+          <div class="ripple-cont"></div>
+        </div>
+        <div class="table">
+          <h6 class="category text-success"> <span><i class="fa fa-newspaper-o"></i> Actualités </span> <span style="text-align: right;margin-left:60px;color: black;"><i class="fa fa-eye"> &nbsp; 243 fois</i></span></h6>
+          <h4 class="card-caption">
+            <a href="#">EBRAH - District d'Abidjan </a>
+          </h4>
+          <!--
+                      <p class="card-description"> EBRAH, village paisible, un village moderne de par le type de logements déjà réalisés par les originaires de ce village. Situé dans la zone de Bingerville mais dépendant de la Sous -Préfecture de Grand-Bassam, Ebrah est situé dans la ceinture Bingerville-Bassam où un pont est prévu pour relier les deux communes. C’est un projet de lotissement et d’aménagement de type RESIDENTIEL et intégrant la viabilisation du site (eau et électricité) ...</p>
+          -->
+          <div class="ftr">
+            <div class="author">
+              <a routerLink="/accueil" style="color: red;"> <i class="fa fa-book"></i> <span>&nbsp;Lire plus</span> </a>
+            </div>
+            <div class="stats"> <i class="fa fa-clock-o"></i> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

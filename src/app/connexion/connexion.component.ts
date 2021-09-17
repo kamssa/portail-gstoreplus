@@ -5,6 +5,8 @@ import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition}
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthService} from "../service/auth.service";
 import {ClientService} from "../service/client.service";
+import {PasswordOublieComponent} from "../password-oublie/password-oublie.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-connexion',
@@ -25,11 +27,13 @@ export class ConnexionComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'bottom';
   isuAth: boolean;
   hide = true;
+  client: Personne;
   constructor( private fb: FormBuilder,
                private route: ActivatedRoute,
                private router: Router,
                private snackBar: MatSnackBar,
                private authService: AuthService,
+               public dialog: MatDialog,
                private  clientService: ClientService) { }
 
   ngOnInit(): void {
@@ -79,7 +83,7 @@ export class ConnexionComponent implements OnInit {
 
           );
           this.authService.login(client).subscribe(data => {
-              if (data.body){
+              if (data.status === 0 ){
                 this.snackBar.open('Succès de la connexion!', '', {
                   duration: 3000,
                   horizontalPosition: this.horizontalPosition,
@@ -95,12 +99,18 @@ export class ConnexionComponent implements OnInit {
               this.error = "E-mail ou mot de passe oublié! Réessayez svp";
             });
         }else {
-          this.error = "Compte non valide !";
+          this.error = "Email ou mot de passe oublié !";
         }
       });
     }else {
       this.error = 'Vérifiez votre connexion internet s\'il vous plaît';
     }
 
+  }
+
+  passeOublie() {
+    let dialogRef = this.dialog.open(PasswordOublieComponent, {
+      width: '650px',
+    });
   }
 }

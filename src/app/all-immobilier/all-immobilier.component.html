@@ -1,7 +1,6 @@
 <div class="jumbotron jumbotron-fluid" style="background: linear-gradient(to bottom left, #302244 0%, #ffffff 105%);">
     <div class="container">
-      <h3 style="text-align: center;color: white;padding: 60px;padding-top: 80px; font-size: 45px;">Propriétés immobilières</h3>
-      <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
+      <h1 style="text-align: center;color: white;padding: 60px;padding-top: 80px;">Propriétés immobilières</h1>
     </div>
 </div>
 <div class="row">
@@ -9,29 +8,21 @@
   </div>
   <div class="col-md-1">
     <div class="wrap">
-      <button routerLink="/devis" class="btn-btn button">Demander un Dévis</button>
+      <button routerLink="/devis" class="btn-btn button" style="font-size: 15px">Effectuer une Demande</button>
     </div>
   </div>
-  <div class="col-md-9">
-  </div>
+
 </div>
-
-
-
 <br><br>
-
-
-
-
-  <!--Main layout-->
+<!--Main layout-->
   <main class="my-5">
     <div class="container">
       <!--Section: Content-->
       <section class="text-center">
-        <h4 class="mb-5"><strong>Nos programmes immobilier</strong></h4>
+        <h1 class="mb-5"><strong>Nos programmes immobiliers</strong></h1>
 
         <div class="row">
-          <div class="col-lg-4 col-md-12 mb-4" *ngFor="let maison of maisons">
+          <div class="col-lg-4 col-md-4 mb-4" *ngFor="let maison of maisons">
             <div class="card">
               <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                 <img [src]="maison.path" alt="Card image cap" class="img-fluid" />
@@ -40,12 +31,15 @@
                 </a>
               </div>
               <div class="card-body">
-                <h5 class="card-title" style="color: red;" >Prix: ??? FCFA</h5>
+                <h1 class="card-title" style="color: #7b1fa2" >{{maison.libelle}} {{maison?.maisonType}}</h1>
 
-                <p class="card-text">
-                 <!-- Some quick example text to build on the card title and make up the bulk of the
-                  card's content.-->
+                <p class="card-text">Surface utile: {{maison?.surfaceUtile}}
+
                 </p>
+                <p class="card-text"> Surface terrain: {{maison?.surfaceTerrain}}
+
+                </p>
+                <p class="card-text">Coût de vente: {{maison?.prix | number}} CFA</p>
                 <a  class="btn btn-primary" (click)="onDetailMaison(maison.id)">Détails</a>
               </div>
             </div>

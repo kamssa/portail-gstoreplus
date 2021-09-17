@@ -1,17 +1,12 @@
 <div class="jumbotron jumbotron-fluid" style="background: linear-gradient(to bottom left, #302244 0%, #ffffff 105%);">
     <div class="container">
-      <h3 style="text-align: center;color: white;padding: 60px;padding-top: 80px; font-size: 45px;">Créer un compte</h3>
-      <!-- <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> -->
+      <h1 style="text-align: center;color: white;padding: 60px;padding-top: 80px;">Créer un compte</h1>
     </div>
   </div><br><br>
-
-
-
-  <div class="container">
+<div class="container">
     <div class="row">
         <div class="offset-md-2 col-md-8" style="text-align: center;">
-          <span style="font-size: 20px;color: red;"> Remplissez les champs pour la création de votre compte</span
-              >
+          <span style="font-size: 20px;color: red;"> Remplissez les champs pour la création de votre compte</span>
           </div>
     </div><br><br>
     <div class="row">
@@ -25,7 +20,7 @@
                               <form [formGroup]="registryForm" (ngSubmit)="onSubmit()" *ngIf="registryForm">
                                   <div class="row">
                                     <div class="col ">
-                                      <input type="text" class="form-control" formControlName="prenom"placeholder="Prénoms"
+                                      <input  type="text" class="form-control" formControlName="prenom"placeholder="Prénoms"
                                              [ngClass]="{ 'is-invalid': submitted && f.prenom.errors }">
                                       <div *ngIf="submitted && f.prenom.errors" class="invalid-feedback">
                                         <div *ngIf="f.prenom.errors.required">Le prenom  est obligatoire</div>
@@ -78,7 +73,7 @@
                                     <div class="col">
                                        <!-- Password input -->
                                         <div class="input-group mb-2 mr-sm-2">
-                                          <input class="form-control" type="password" placeholder="Confirmer mot de passe" formControlName="password"
+                                          <input class="form-control" type="password" placeholder="Confirmer mot de passe" formControlName="confirmPassword"
                                                  [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
                                           <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                                             <div *ngIf="f.password.errors.required">La confirmation de passe est obligatoire</div>
@@ -93,6 +88,8 @@
                                     <button type="submit" class="btn btn-block" style="background-color: #302244;color: white;">
                                         S'inscrire</button>
                                     </div>
+                                   <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                <div *ngIf="error" class="btn login_btn">{{error}}</div>
                                 </form>
                             </div>
                         </div>
