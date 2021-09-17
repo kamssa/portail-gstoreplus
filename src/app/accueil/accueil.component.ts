@@ -54,22 +54,7 @@ flashMaisons: FlashMaison[];
 
   }
 
-  onDetailMaison(id: any): void {
-    this.router.navigate(['detailMaison', id]);
-         /*this._snackBar.open('Bientôt disponible!', '', {
-              duration: 3000,
-              horizontalPosition: this.horizontalPosition,
-              verticalPosition: 'top',
 
-            });
-*/
-  }
-  onDetailTerrain(id: number) {
-    this.router.navigate(['detailTerrain', id]);
-  }
-  onDetailFlasMaison(id: number) {
-    this.router.navigate(['detailFlashMaison', id]);
-  }
   getCurrentUser(){
     if (localStorage.getItem('currentUser')) {
       let token = localStorage.getItem('currentUser');
